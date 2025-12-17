@@ -15,7 +15,7 @@ AI Minesweeper is a sophisticated implementation combining:
 ### Development Setup
 ```bash
 # Clone and setup
-git clone https://github.com/yourusername/ai-minesweeper.git
+git clone https://github.com/MrStark65/ai-minesweeper.git
 cd ai-minesweeper
 npm install
 

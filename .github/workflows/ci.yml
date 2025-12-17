@@ -112,10 +112,20 @@ jobs:
     - name: Build project
       run: npm run build
     
+    - name: Prepare deployment files
+      run: |
+        mkdir -p docs
+        cp -r public/* docs/
+        # Update paths for GitHub Pages
+        sed -i 's|href="styles.css"|href="./styles.css"|g' docs/index.html
+        sed -i 's|src="game.js"|src="./game.js"|g' docs/index.html
+        sed -i 's|href="manifest.json"|href="./manifest.json"|g' docs/index.html
+        sed -i 's|href="help.html"|href="./help.html"|g' docs/index.html
+    
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        cname: your-custom-domain.com  # Optional: replace with your domain
+        publish_dir: ./docs
+        # cname: your-custom-domain.com  # Optional: add custom domain later

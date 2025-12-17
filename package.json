@@ -1,8 +1,27 @@
 {
   "name": "ai-minesweeper",
   "version": "1.0.0",
-  "description": "AI-powered Minesweeper with explainable reasoning",
+  "description": "AI-powered Minesweeper with explainable reasoning and constraint satisfaction algorithms",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrStark65/ai-minesweeper.git"
+  },
+  "homepage": "https://mrstark65.github.io/ai-minesweeper/",
+  "bugs": {
+    "url": "https://github.com/MrStark65/ai-minesweeper/issues"
+  },
+  "author": "MrStark65",
+  "keywords": [
+    "minesweeper",
+    "ai",
+    "artificial-intelligence",
+    "constraint-satisfaction",
+    "game",
+    "typescript",
+    "web-app",
+    "pwa"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

@@ -36,7 +36,7 @@ A sophisticated AI-powered Minesweeper game with explainable reasoning, constrai
 ### Web Interface (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ai-minesweeper.git
+git clone https://github.com/MrStark65/ai-minesweeper.git
 cd ai-minesweeper
 
 # Install dependencies
@@ -230,11 +230,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🎯 Live Demo
 
-Try the live demo: **[AI Minesweeper](https://your-demo-url.com)**
+Try the live demo: **[AI Minesweeper](https://mrstark65.github.io/ai-minesweeper/)**
 
 Or run locally:
 ```bash
-git clone https://github.com/yourusername/ai-minesweeper.git
+git clone https://github.com/MrStark65/ai-minesweeper.git
 cd ai-minesweeper
 npm install && npm run web
 ```
