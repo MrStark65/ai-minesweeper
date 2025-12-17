@@ -1,0 +1,27 @@
+{
+  "name": "ai-minesweeper",
+  "version": "1.0.0",
+  "description": "AI-powered Minesweeper with explainable reasoning",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "start": "node dist/index.js",
+    "web": "node server.js",
+    "demo": "node demo.js",
+    "auto-demo": "node auto-demo.js",
+    "perfect-demo": "node perfect-ai-demo.js",
+    "test-fixes": "node test-fixes.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0",
+    "fast-check": "^3.15.0"
+  },
+  "dependencies": {}
+}

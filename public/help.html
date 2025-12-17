@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play - AI Minesweeper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI Minesweeper Guide</h1>
+            <a href="/" class="btn btn-primary">← Back to Game</a>
+        </header>
+
+        <div class="help-content">
+            <section class="help-section">
+                <h2>🎮 How to Play</h2>
+                <ul>
+                    <li><strong>Goal:</strong> Reveal all safe cells without hitting mines</li>
+                    <li><strong>Left Click:</strong> Reveal a cell</li>
+                    <li><strong>Right Click:</strong> Flag/unflag a cell as mine</li>
+                    <li><strong>Numbers:</strong> Show how many mines are adjacent to that cell</li>
+                    <li><strong>Empty cells:</strong> Automatically reveal adjacent safe areas</li>
+                </ul>
+            </section>
+
+            <section class="help-section">
+                <h2>🤖 AI Features</h2>
+                <ul>
+                    <li><strong>AI Help Button:</strong> Get simple recommendations in easy language</li>
+                    <li><strong>Auto Play:</strong> Watch the AI play automatically - great for learning!</li>
+                    <li><strong>Speed Control:</strong> Choose how fast the AI plays (slow to very fast)</li>
+                    <li><strong>Green Highlights:</strong> Cells the AI is sure are safe</li>
+                    <li><strong>Yellow Highlights:</strong> Cells the AI thinks are probably safe</li>
+                    <li><strong>Cell Info:</strong> Click any cell to learn about it in simple words</li>
+                    <li><strong>Simple Explanations:</strong> No complex math - just easy to understand reasons</li>
+                </ul>
+            </section>
+
+            <section class="help-section">
+                <h2>📱 Mobile Controls</h2>
+                <ul>
+                    <li><strong>🤖 AI:</strong> Get simple AI help</li>
+                    <li><strong>▶️ Auto:</strong> Watch AI play automatically</li>
+                    <li><strong>👆 Reveal/🚩 Flag:</strong> Switch between reveal and flag mode</li>
+                    <li><strong>🔄 New:</strong> Start a new game</li>
+                    <li><strong>Tap:</strong> Perform selected action (reveal or flag)</li>
+                    <li><strong>Long Press:</strong> Always flags a cell</li>
+                </ul>
+            </section>
+
+            <section class="help-section">
+                <h2>🎯 Difficulty Levels</h2>
+                <ul>
+                    <li><strong>Beginner:</strong> 9×9 grid, 10 mines - Perfect for learning</li>
+                    <li><strong>Intermediate:</strong> 16×16 grid, 40 mines - Balanced challenge</li>
+                    <li><strong>Expert:</strong> 30×16 grid, 99 mines - Maximum difficulty</li>
+                </ul>
+            </section>
+
+            <section class="help-section">
+                <h2>🧠 AI Intelligence</h2>
+                <p>The AI uses advanced algorithms to help you:</p>
+                <ul>
+                    <li><strong>Constraint Satisfaction:</strong> Finds guaranteed safe/mine cells through logic</li>
+                    <li><strong>Probability Calculation:</strong> Computes mine probabilities when logic isn't enough</li>
+                    <li><strong>Pattern Recognition:</strong> Identifies common Minesweeper patterns</li>
+                    <li><strong>Explainable Reasoning:</strong> Shows exactly why it makes each recommendation</li>
+                </ul>
+            </section>
+
+            <section class="help-section">
+                <h2>💡 Tips for Beginners</h2>
+                <ul>
+                    <li><strong>New to Minesweeper?</strong> Use Auto Play to watch and learn!</li>
+                    <li><strong>Start simple:</strong> Begin with Beginner difficulty</li>
+                    <li><strong>Use the AI:</strong> Click "AI Help" whenever you're unsure</li>
+                    <li><strong>Read the explanations:</strong> Click cells to understand what they mean</li>
+                    <li><strong>Numbers are clues:</strong> A "3" means 3 mines are touching that cell</li>
+                    <li><strong>Flag mines:</strong> Right-click (or use Flag mode) to mark dangerous cells</li>
+                    <li><strong>Practice:</strong> The more you play, the better you'll get!</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <style>
+        .help-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .help-section {
+            background: var(--surface-color);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .help-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .help-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .help-section li:last-child {
+            border-bottom: none;
+        }
+
+        .help-section strong {
+            color: var(--primary-color);
+        }
+
+        .help-section p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+    </style>
+</body>
+</html>

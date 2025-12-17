@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Minesweeper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="AI Minesweeper">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMyNTYzZWIiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiLz4KPHBhdGggZD0ibTggNSA2IDZtLTYgMCA2LTZtMiAxMGMuNS0uNSAxLjUtLjUgMiAwczEuNSAxLjUgMSAyLS41IDEuNS0xIDEtMS41LTEuNS0xLTIiLz4KPHBhdGggZD0iTTkgMTJoLjAxIi8+CjxwYXRoIGQ9Ik0xNSAxMmguMDEiLz4KPHN2Zz4KPC9zdmc+">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 AI Minesweeper</h1>
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="label">Mines:</span>
+                    <span id="mines-count" class="value">10</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Status:</span>
+                    <span id="game-status" class="value">PLAYING</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Progress:</span>
+                    <span id="progress" class="value">0/71</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="difficulty-controls">
+                <button class="btn btn-difficulty" data-difficulty="tutorial">Tutorial</button>
+                <button class="btn btn-difficulty" data-difficulty="beginner">Beginner</button>
+                <button class="btn btn-difficulty active" data-difficulty="intermediate">Intermediate</button>
+                <button class="btn btn-difficulty" data-difficulty="expert">Expert</button>
+            </div>
+            
+            <div class="game-controls">
+                <button id="new-game" class="btn btn-primary">New Game</button>
+                <button id="ai-help" class="btn btn-ai">🤖 AI Help</button>
+                <button id="auto-play" class="btn btn-success">▶️ Auto Play</button>
+                <button id="toggle-mode" class="btn btn-secondary">Mode: Reveal</button>
+                <a href="help.html" class="btn btn-secondary">❓ Help</a>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="board-container">
+                <div id="game-board" class="game-board"></div>
+            </div>
+            
+            <div class="side-panel">
+                <div class="ai-panel">
+                    <h3>🧠 AI Assistant</h3>
+                    
+                    <div class="auto-play-controls">
+                        <div class="speed-control">
+                            <label>Speed:</label>
+                            <select id="auto-play-speed">
+                                <option value="2000">Slow (2s)</option>
+                                <option value="1000" selected>Normal (1s)</option>
+                                <option value="500">Fast (0.5s)</option>
+                                <option value="100">Very Fast (0.1s)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="ai-recommendation" class="ai-section">
+                        <p class="ai-message simple">Click "AI Help" to see what to do next</p>
+                    </div>
+                    
+                    <div id="ai-reasoning" class="ai-section">
+                        <h4>Why?</h4>
+                        <div class="reasoning-steps simple"></div>
+                    </div>
+                    
+                    <div id="cell-explanation" class="ai-section">
+                        <h4>Cell Info</h4>
+                        <p class="explanation-text simple">Click any cell to learn about it</p>
+                    </div>
+                </div>
+                
+                <div class="probability-panel">
+                    <h3>📊 Probabilities</h3>
+                    <div id="probability-display" class="probability-grid">
+                        <p>Probabilities will appear here when available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <button id="mobile-ai-help" class="mobile-btn">🤖 AI</button>
+            <button id="mobile-auto-play" class="mobile-btn">▶️ Auto</button>
+            <button id="mobile-toggle-mode" class="mobile-btn">👆 Reveal</button>
+            <button id="mobile-new-game" class="mobile-btn">🔄 New</button>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Game Over</h2>
+            <p id="modal-message">Better luck next time!</p>
+            <div class="modal-actions">
+                <button id="modal-new-game" class="btn btn-primary">New Game</button>
+                <button id="modal-close" class="btn btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
