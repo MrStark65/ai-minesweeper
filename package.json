@@ -32,15 +32,18 @@
     "demo": "node demo.js",
     "auto-demo": "node auto-demo.js",
     "perfect-demo": "node perfect-ai-demo.js",
-    "test-fixes": "node test-fixes.js"
+    "test-fixes": "node test-fixes.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d docs"
+
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/node": "^20.0.0",
+    "fast-check": "^3.15.0",
+    "gh-pages": "^6.3.0",
     "jest": "^29.5.0",
     "ts-jest": "^29.1.0",
-    "typescript": "^5.0.0",
-    "fast-check": "^3.15.0"
-  },
-  "dependencies": {}
+    "typescript": "^5.0.0"
+  }
 }
